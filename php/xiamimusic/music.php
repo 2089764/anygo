@@ -19,8 +19,10 @@ function binhex($str) {$hex = "";
 }
 function find($value,$oldvalue)
 {
-    $qurl='http://nnlife.cdn.duapp.com/xiami.php?key='.$oldvalue;
-	$nqurl='http://nnlife.cdn.duapp.com/xiami.php?key='.$value;
+    $qurl='http://nnlife.duapp.com/xiami.php?key='.urlencode($oldvalue);
+    $qurl = str_replace(" ", "%20", $qurl);
+    $qurl = str_replace("+", "%20", $qurl);
+	$nqurl='http://nnlife.duapp.com/xiami.php?key='.$value;
 	//echo $qurl."</br>";
 	//echo binhex($qurl)."</br>";
 	//echo binhex($nqurl)."</br>";

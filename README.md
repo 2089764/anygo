@@ -1,7 +1,3 @@
 anygo project 
-Team : pengyong,kevin,kenn
+Team : pengyong,kevin
 
-勇哥天生大老板
-
-勇哥素坏淫啊！！
-=========

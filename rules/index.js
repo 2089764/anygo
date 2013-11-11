@@ -16,6 +16,18 @@ var geo2loc = require('../support').geo2loc;
  * 初始化路由规则
  */
 module.exports = exports = function(webot){
+  //var json='{"errcode":0,"msgtype":"music","music":{"title":"Believe","description":"Cher","musicurl":"http:\/\/m1.file.xiami.com\/1\/828\/15828\/137437\/1532606_637166_l.mp3","hqmusicurl":"http:\/\/m1.file.xiami.com\/1\/828\/15828\/137437\/1532606_637166_l.mp3"}}'
+  //var jsonObj=JSON.parse(String(json));
+  //console.log(jsonObj); 
+  //console.log(jsonObj.music.title);
+    setTimeout(function(){console.log('5')},5000);
+    console.log('1');
+    function test(){
+    setTimeout(function(){console.log('2')},1000);
+    }
+    test();
+    console.log('3');
+    setTimeout(function(){console.log('4')},2000);
   var reg_help = /^(help|\?)$/i
   webot.set({
     // name 和 description 都不是必须的
@@ -462,7 +474,7 @@ function calcTime(city, offset) {
    //所有消息都无法匹配时的fallback
   webot.set( 'search_allnum_music', {
     description: '发送: 全部汉字 ',
-    pattern: /^[\u4e00-\u9fa5]+$/ ,
+    pattern: /^[\u4e00-\u9fa5_a-zA-Z0-9\s]+$/ ,
     //handler也可以是异步的
     handler: do_search_allhans_music
   });
